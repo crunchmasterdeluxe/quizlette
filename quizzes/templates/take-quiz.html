@@ -1,0 +1,10 @@
+<html>
+    <body>
+        <h1>{{ quiz.name }} Quiz</h1>
+
+        {% for question in questions %}
+            <h3>Question #{{ question.question_number }}</h3>
+            <p>{{ question.question_text }}</p>
+        {% endfor %}
+    </body>
+</html>
