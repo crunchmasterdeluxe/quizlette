@@ -1,5 +1,5 @@
 # quizlette
-A fun adaptation of Quizlette in Django
+A fun adaptation of Quizlet in Django (renamed Quizzlette for CopyRight reasons)
 
 ## Startup Instructions
 These instructions assume that you have python3 running on your OS.
