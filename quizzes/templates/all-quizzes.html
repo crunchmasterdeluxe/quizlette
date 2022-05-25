@@ -1,0 +1,9 @@
+<html>
+    <head>
+    </head>
+    <body>
+        {% for quiz in quizzes %}
+            <a href="/quizzes/take-quiz/{{ quiz.id }}"><p>{{ quiz.id }} -- {{ quiz.name }}</p></a>
+        {% endfor %}
+    </body>
+</html>
