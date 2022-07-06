@@ -2,13 +2,19 @@
     <body>
         <h1>{{ quiz.name }} Quiz</h1>
 
-        {% for question in questions %}
-            <h3>Question #{{ question.question_number }}</h3>
-            <p>{{ question.question_text }}</p>
-            <br><p>{{ question.answer }}</p>
-            <p>{{ question.false_answer_1 }}</p>
-            <p>{{ question.false_answer_2 }}</p>
-            <p>{{ question.false_answer_3 }}</p>
-        {% endfor %}
+        <form action="" method="POST" value="answers">{% csrf_token %}
+            {% for question in questions %}
+                <h3>Question #{{ question.question_number }}</h3>  
+                <input type="radio" id="{{ question.question_number }}_answer" name="{{ question.question_number }}_answer" value="{{ question.answer }}">
+                <label for="1_answer">{{ question.answer }}</label><br>
+                <input type="radio" id="{{ question.false_answer_1 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_1 }}">
+                <label for="{{ question.question_number }}_answer">{{ question.false_answer_1 }}</label><br>
+                <input type="radio" id="{{ question.false_answer_2 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_2 }}">
+                <label for="a{{ question.question_number }}_nswer">{{ question.false_answer_2 }}</label><br>
+                <input type="radio" id="{{ question.false_answer_3 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_3 }}">
+                <label for="{{ question.question_number }}_answer">{{ question.false_answer_3 }}</label><br>
+            {% endfor %}
+            <input type="submit" value="Submit Quiz">
+        </form>
     </body>
 </html>

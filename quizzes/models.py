@@ -36,3 +36,10 @@ class Question(models.Model):
     class Meta:
         verbose_name = 'Quiz Question'
         verbose_name_plural = 'Quiz Questions'
+
+# class Answer(models.Model):
+#     question = models.ForeignKey(Question,related_name='question_answer',null=False,on_delete=models.PROTECT) #Quizzes have questions
+#     answer = models.CharField(max_length=1027,null=False)
+
+#     def __str__(self):
+#         return self.answer
