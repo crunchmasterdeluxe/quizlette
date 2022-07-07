@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,re_path,include
+from quizzes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path(r"^quizzes/",include('quizzes.urls',namespace='quizzes'))
+    re_path(r"^quizzes/",include('quizzes.urls',namespace='quizzes')),
+    re_path(r"", views.AllQuizzes.as_view(),name="all-quizzes")
 ]
