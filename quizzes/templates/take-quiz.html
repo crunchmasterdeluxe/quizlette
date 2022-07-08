@@ -1,20 +1,45 @@
-<html>
-    <body>
-        <h1>{{ quiz.name }} Quiz</h1>
 
-        <form action="" method="POST" value="answers">{% csrf_token %}
-            {% for question in questions %}
-                <h3>Question #{{ question.question_number }}</h3>  
-                <input type="radio" id="{{ question.question_number }}_answer" name="{{ question.question_number }}_answer" value="{{ question.answer }}">
-                <label for="1_answer">{{ question.answer }}</label><br>
-                <input type="radio" id="{{ question.false_answer_1 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_1 }}">
-                <label for="{{ question.question_number }}_answer">{{ question.false_answer_1 }}</label><br>
-                <input type="radio" id="{{ question.false_answer_2 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_2 }}">
-                <label for="a{{ question.question_number }}_nswer">{{ question.false_answer_2 }}</label><br>
-                <input type="radio" id="{{ question.false_answer_3 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_3 }}">
-                <label for="{{ question.question_number }}_answer">{{ question.false_answer_3 }}</label><br>
-            {% endfor %}
-            <input type="submit" value="Submit Quiz">
+<html>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <body>
+        <div class="text-center p-5">
+            <h1 class="display-4">{{ quiz.name }} Quiz</h1>
+        </div>
+
+        <form action="" method="POST" value="answers" class="p-5">{% csrf_token %}
+            <div class="col-md d-flex flex-column p-0">
+                <div class="justify-content-between">
+                    {% for question in questions %}
+                    <div class="bg-light border card p-4 w-90 mt-3 mb-3">
+                        <h3 class="heading">{{question.question_number}}. {{question}}</h3> 
+
+                        <div class="pt-5 pb-4">
+                            <div>
+                                <input type="radio" id="{{ question.question_number }}_answer" name="{{ question.question_number }}_answer" value="{{ question.answer }}">
+                                 <label class ="radio"for="1_answer">{{ question.answer }}</label><br>
+                            </div> 
+                        
+                            <div>
+                                <input type="radio" id="{{ question.false_answer_1 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_1 }}">
+                                <label for="{{ question.question_number }}_answer">{{ question.false_answer_1 }}</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="{{ question.false_answer_2 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_2 }}">
+                                <label for="a{{ question.question_number }}_nswer">{{ question.false_answer_2 }}</label><br>
+                            </div>
+                            <div>
+                                <input type="radio" id="{{ question.false_answer_3 }}" name="{{ question.question_number }}_answer" value="{{ question.false_answer_3 }}">
+                                <label for="{{ question.question_number }}_answer">{{ question.false_answer_3 }}</label><br>
+                            </div> 
+
+                        </div>            
+                    </div>
+                     {% endfor %}
+                </div>
+            </div>
+
+            <input type="submit" value="Submit Quiz" class="btn btn-primary">
         </form>
     </body>
 </html>
