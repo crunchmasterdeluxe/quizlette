@@ -15,7 +15,7 @@ This project requires only Django. Design is accomplished through bootstrap.
 # Useful Websites
 [Django docs - really good instructions](https://docs.djangoproject.com/en/4.0/)
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/eUSIpMLIALg)
 
 # Collaborators
 
