@@ -1,4 +1,4 @@
-# quizlette
+# Overview
 A fun adaptation of Quizlet in Django (renamed Quizzlette for CopyRight reasons)
 
 ## Startup Instructions
@@ -8,6 +8,15 @@ These instructions assume that you have python3 running on your OS.
 3. To run on your local server, run `python3 manage.py runserver`.
 4. If you make any changes to models.py, you must update the database to reflect those changes. You can do so by running `python3 manage.py makemigrations` and then `python3 manage.py migrate`
 
+# Development Environment
 
-## Good sources
+This project requires only Django. Design is accomplished through bootstrap.
+
+# Useful Websites
 [Django docs - really good instructions](https://docs.djangoproject.com/en/4.0/)
+
+[Software Demo Video](http://youtube.link.goes.here)
+
+# Collaborators
+
+Andy G, Lydia S, Brian B
