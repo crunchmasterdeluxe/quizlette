@@ -18,7 +18,7 @@
                     <div class="mt-4">
                         <h3 class="heading">{{quiz.name}}</h3>
                         <div class ="mt-1">
-                            <a href="/quizzes/take-quiz/{{ quiz.id }}/#">
+                            <a href="/quizzes/take-quiz/{{ quiz.id }}/">
                                 <button class = "btn btn-primary">Take Quiz</button>
                             </a>
                         </div>
@@ -27,6 +27,23 @@
             </div>
         {% endfor %}
 
+        </div>
+        <div class="row p-5">
+            <div class="col-md">
+                <div class="card p-4 mb-2">
+                    <div class="d-flex flex-row allign-items-left">
+                        <h6 class="mb-0"></h6>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="heading">Teacher Section</h3>
+                        <div class ="mt-1">
+                            <a href="/admin">
+                                <button class = "btn btn-primary">Create Quiz</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </body>

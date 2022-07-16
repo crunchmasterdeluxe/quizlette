@@ -26,22 +26,26 @@ class TakeQuiz(generic.ListView):
         return context
 
     def post(self,*args,**kwargs):
-        # context = super().get_context_data(**kwargs)
-        # print(context)
         self.quiz = Quiz.objects.values('id','name').get(pk=self.kwargs.get("question_quiz"))
         questions = Question.objects.filter(quiz__id=self.quiz.get("id")).all()
  
         username = self.request.user
         print(username)
         if self.request.method == "POST":
+            total = 0
+            correct = 0
             for i in questions:
                 answer = self.request.POST.get(f"{i.question_number}_answer")
                 if answer == i.answer:
+                    correct += 1
                     print(i.question_number,"Correct!")
                 else:
                     print(i.question_number,"Wrong")
+                total += 1
+            score = int((correct / total) * 100)
             
-        return HttpResponseRedirect("#")
+        # return HttpResponseRedirect("#")
+        return render(self.request, 'complete.html', {'score': score})
 
 class AllQuizzes(generic.ListView):
     model = Quiz
